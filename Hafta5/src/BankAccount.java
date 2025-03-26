@@ -7,10 +7,10 @@ public class BankAccount {
 
 
     public BankAccount(float balance, String name, String id, String currency){
-        this.ownerName = name;
-        this.balance = balance;
-        this.bankID = id;
-        this.currency = currency;
+        setBalance(balance);
+        setOwnerName(name);
+        setBankID(id);
+        setCurrency(currency);
     }
 
     public float getBalance() {
