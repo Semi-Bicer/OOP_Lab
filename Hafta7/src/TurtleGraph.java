@@ -45,29 +45,38 @@ public class TurtleGraph {
 
     public void moveForward(int distance){
         if (d == direction.up){
-            for (int i = 0; i < distance; i++)
-                row--;
-
+            for (int i = 0; i < distance; i++) {
+                if (row == 0)
+                    row = 20;
+                row--; // goes from up to down
+            }
             if (p == penLocation.down)
                 room[row][column] = 1;
         }
         else if (d == direction.right){
-            for (int i = 0; i < distance; i++)
-                column++;
-
+            for (int i = 0; i < distance; i++) {
+                if (column == 19)
+                    column = -1;
+                column++; // goes from right to left
+            }
             if (p == penLocation.down)
                 room[row][column] = 1;
         }
         else if (d == direction.down){
-            for (int i = 0; i < distance; i++)
+            for (int i = 0; i < distance; i++) {
+                if (row == 19)
+                    row = -1;
                 row++;
-
+            }
             if (p == penLocation.down)
                 room[row][column] = 1;
         }
         else {
-            for (int i = 0; i < distance; i++)
+            for (int i = 0; i < distance; i++) {
+                if (column == 0)
+                    column = 20;
                 column--;
+            }
 
             if(p == penLocation.down)
                 room[row][column] = 1;
